@@ -1,4 +1,7 @@
+"use client";
+
 import { MapPin, Phone, Instagram, Clock } from 'lucide-react';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function Contact() {
     return (
@@ -16,11 +19,29 @@ export default function Contact() {
                     </div>
                     <div className="info-item">
                         <Phone className="icon" size={24} style={{ color: 'var(--color-gold)' }} />
-                        <p><a href="tel:5035882677" className="hover-link">(503) 588-2677</a></p>
+                        <p>
+                            <a
+                                href="tel:5035882677"
+                                className="hover-link"
+                                onClick={() => sendGAEvent('event', 'contact_click', { value: 'phone_contact_section' })}
+                            >
+                                (503) 588-2677
+                            </a>
+                        </p>
                     </div>
                     <div className="info-item">
                         <Instagram className="icon" size={24} style={{ color: 'var(--color-gold)' }} />
-                        <p><a href="https://instagram.com/miabellasalonandspasalem" target="_blank" rel="noopener noreferrer" className="hover-link">@miabellasalonandspasalem</a></p>
+                        <p>
+                            <a
+                                href="https://instagram.com/miabellasalonandspasalem"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover-link"
+                                onClick={() => sendGAEvent('event', 'social_click', { value: 'instagram_contact_section' })}
+                            >
+                                @miabellasalonandspasalem
+                            </a>
+                        </p>
                     </div>
                     <div className="info-item">
                         <Clock className="icon" size={24} style={{ color: 'var(--color-gold)' }} />

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from 'next/image';
+import { sendGAEvent } from '@next/third-parties/google';
 
 export default function Hero() {
     return (
@@ -24,7 +27,13 @@ export default function Hero() {
                         <span>🏆 2 Years Running Best of Salem</span>
                     </div>
                 </div>
-                <a href="#contact" className="btn-primary hero-cta">Book Your Appointment</a>
+                <a
+                    href="#contact"
+                    className="btn-primary hero-cta"
+                    onClick={() => sendGAEvent('event', 'conversion_click', { value: 'book_appointment_hero' })}
+                >
+                    Book Your Appointment
+                </a>
             </div>
         </section>
     );
