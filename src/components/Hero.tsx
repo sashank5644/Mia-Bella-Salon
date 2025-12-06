@@ -8,7 +8,7 @@ export default function Hero() {
         <section className="hero">
             <div className="hero-bg">
                 <Image
-                    src="/images/image-1.jpg"
+                    src="/images/hero-bg.jpg"
                     alt="Mia Bella Salon Exterior"
                     fill
                     style={{ objectFit: 'cover' }}
