@@ -278,8 +278,20 @@ button {
 .section-subtitle {
   color: var(--color-text-muted);
   font-size: 1.1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   margin-top: -2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.section-note {
+  color: var(--color-gold);
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .services-grid {
@@ -290,17 +302,22 @@ button {
 
 .service-card {
   background: var(--color-bg-secondary);
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem;
   border-radius: 12px;
   border: 1px solid rgba(212, 175, 55, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border-color: rgba(212, 175, 55, 0.3);
+}
+
+.service-card.expanded {
+  border-color: var(--color-gold);
 }
 
 .service-icon {
@@ -312,13 +329,46 @@ button {
 .service-name {
   font-size: 1.3rem;
   color: var(--color-gold);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.service-description {
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.service-card.expanded .service-list {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.service-item {
   color: var(--color-text-muted);
   font-size: 0.95rem;
-  line-height: 1.6;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.expand-hint {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .expand-hint {
+  opacity: 1;
 }
 
 /* Gallery */

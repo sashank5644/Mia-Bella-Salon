@@ -18,6 +18,10 @@ const images = [
     '/images/image-12.JPEG',
     '/images/image-13.JPEG',
     '/images/image-14.jpg',
+    '/images/image-15.jpg',
+    '/images/image-16.jpg',
+    '/images/image-17.jpg',
+    '/images/image-18.jpg',
 ];
 
 export default function Gallery() {
