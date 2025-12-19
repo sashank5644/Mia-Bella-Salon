@@ -40,7 +40,8 @@ const serviceCategories = [
         services: [
             "Manicures",
             "Pedicures",
-            "Nail Art & Design"
+            "Nail Art & Design",
+            "Hard Gel Nails"
         ]
     }
 ];
