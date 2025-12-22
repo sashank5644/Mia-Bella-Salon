@@ -528,6 +528,143 @@ button {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Stylists */
+.stylists-section {
+  background: var(--color-bg);
+}
+
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stylist-card {
+  background: var(--color-bg-secondary);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stylist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light), var(--color-gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stylist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.stylist-card:hover::before {
+  opacity: 1;
+}
+
+.stylist-avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stylist-card:hover .stylist-avatar {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+}
+
+.avatar-initial {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.stylist-name {
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.stylist-role {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.stylist-specialty {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.stylist-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: white;
+  border-color: transparent;
+}
+
+.social-link.facebook:hover {
+  background: #1877f2;
+  color: white;
+  border-color: transparent;
+}
+
+.social-link.tiktok:hover {
+  background: linear-gradient(135deg, #00f2ea, #ff0050);
+  color: white;
+  border-color: transparent;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title {
